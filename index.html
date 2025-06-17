@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista Zadań — Mega Wersja</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen p-8">
+
+<div class="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-8">
+  <h1 class="text-4xl font-bold text-center mb-8 text-purple-700">✨ Moja Lista Zadań ✨</h1>
+
+  <div class="mb-6 flex flex-col md:flex-row md:items-center md:gap-4">
+    <label for="username" class="block mb-2 md:mb-0 font-medium text-gray-700">Nazwa użytkownika:</label>
+    <input type="text" id="username" placeholder="np. Janek"
+           class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-400">
+  </div>
+
+  <div class="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <input type="text" id="task-content" placeholder="Co chcesz zrobić?"
+           class="col-span-1 md:col-span-2 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-400">
+
+    <select id="task-priority" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-400">
+      <option value="" disabled selected>Priorytet</option>
+      <option value="low">Niski</option>
+      <option value="medium">Średni</option>
+      <option value="high">Wysoki</option>
+    </select>
+
+    <select id="task-category" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-400">
+      <option value="" disabled selected>Kategoria</option>
+      <option value="Praca">Praca</option>
+      <option value="Nauka">Nauka</option>
+      <option value="Hobby">Hobby</option>
+    </select>
+  </div>
+
+  <button id="add-task" class="w-full bg-purple-600 text-white font-semibold py-3 rounded-lg hover:bg-purple-700 transition">
+    ➕ Dodaj Zadanie
+  </button>
+
+  <div class="mt-8 flex flex-wrap gap-4 justify-center">
+    <button id="show-all" class="filter-btn">Wszystkie</button>
+    <button id="show-pending" class="filter-btn">Do zrobienia</button>
+    <button id="show-done" class="filter-btn">Ukończone</button>
+  </div>
+
+  <ul id="task-list" class="mt-8 space-y-4"></ul>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
